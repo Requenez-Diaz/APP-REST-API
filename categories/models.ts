@@ -4,7 +4,7 @@ const CategoriesSchema = new mongoose.Schema({
     id: String,
     name: String,
     description: String,
-    Slog: String
+    Slug: String
 });
 
-export const Categorie = mongoose.model('Categorie', CategoriesSchema);
+export const Category = mongoose.model('Category', CategoriesSchema);

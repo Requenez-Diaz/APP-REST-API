@@ -22,13 +22,14 @@ const getOne =async (id :string) => {
 const deleteOne =async (id: string) => {
     return await Client.deleteOne({ id });
 }
-const updateOne = async (id :string) => {
-    return await Client.updateOne({ id }, { name: 'new name' });
+const update = async (id: string, data: IClients) => {
+    const model = await Client.findOneAndUpdate({ id }, data, {new: true})
+    return model;
 }
 export default {
     list,
     clientes,
     getOne,
     deleteOne,
-    updateOne,
+    update,
 }

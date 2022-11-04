@@ -9,4 +9,4 @@ const inventaryScheema = new mongoose.Schema({
     city: String,
 });
 
-export const Inventary = mongoose.model('Client', inventaryScheema);
+export const Inventary = mongoose.model('Ineventary', inventaryScheema);
