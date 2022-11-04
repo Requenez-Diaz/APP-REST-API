@@ -1,4 +1,4 @@
-import { products } from '../db'
+
 import repository from './repository';
 
 const list = async () => {

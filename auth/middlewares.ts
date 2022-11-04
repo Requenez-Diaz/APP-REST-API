@@ -8,6 +8,7 @@ const requireAuth = (req: Request, res: Response, next: NextFunction) => {
     try {
         validateHeader(req);
         validateToken(req);
+        // deleteUser(req);
 
     } catch (error: any) {
         res.status(401).json({
@@ -35,6 +36,12 @@ const validateToken = (req: Request) => {
         const user = repository.findUserById(decodedToken.id);
     }
 };
+
+// const deleteUser = (req: Request) => {
+//     const eliminar = req.headers?.authorization?.split(' ') [ 1];
+
+//     if (!eliminar ) 
+// }
 
 
 export { requireAuth };

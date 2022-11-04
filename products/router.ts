@@ -20,6 +20,7 @@ router.post("/", async (req: Request, res: Response, next: NextFunction) => {
         });
     }
 });
+//https://www.tutofox.com/react-native/react-native-como-conectar-y-listar-datos-desde-api-rest/
 
 router.get("/:id", requireAuth, async (req: Request, res: Response, next: NextFunction) => {
     try {
@@ -39,6 +40,5 @@ router.delete("/:id", (req: Request, res: Response, next: NextFunction) => {
     // let myproducts = products.filter(item => item.id !== id);
     res.json({});
 });
-
 
 export default router; 
