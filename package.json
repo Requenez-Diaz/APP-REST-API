@@ -22,5 +22,16 @@
     "@types/jsonwebtoken": "^8.5.9",
     "@types/mongoose": "^5.11.97",
     "@types/node": "^18.8.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darwinsalinas/backend-node-ts2.git"
+  },
+  "keywords": [],
+  "author": "Darwin Salinas <salinash2000@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/darwinsalinas/backend-node-ts2/issues"
+  },
+  "homepage": "https://github.com/darwinsalinas/backend-node-ts2#readme"
 }
