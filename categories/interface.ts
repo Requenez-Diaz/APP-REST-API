@@ -1,6 +1,5 @@
 export interface Categories {
+    categoria: string
     name: string
-    description: number
-    slug: string
-
+    horario: number
 }

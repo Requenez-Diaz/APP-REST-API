@@ -10,7 +10,7 @@ const list = async () => {
 const store = async (data: ICategorie) => {
     const id = ulid();
 
-    const categorie = new Category({ name: data.name, description: data.description, id });
+    const categorie = new Category({ categoria: data.categoria, name: data.name, horario: data.horario, id });
 
     await categorie.save();
 

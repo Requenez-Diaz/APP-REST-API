@@ -2,11 +2,14 @@ import mongoose from "mongoose";
 
 const inventaryScheema = new mongoose.Schema({
     id: String,
-    name: String,
-    stok: Number,
+    nameStore: String,
+    service: String,
+    description: String,
+    horario: Number,
+    inventary: Number,
     sales: Number,
-    store: String,
-    city: String,
+    price: Number,
+    disponible: Number,
 });
 
-export const Inventary = mongoose.model('Ineventary', inventaryScheema);
+export const Inventary = mongoose.model('Inventary', inventaryScheema);

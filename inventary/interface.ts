@@ -1,6 +1,11 @@
 export interface Inventary {
-    name: string
-    stok: number
+    nameStore: string
+    service: number
+    description: string
+    horario: number
+    inventary: number
     sales: number
+    price: number
+    disponible: number
 
 }

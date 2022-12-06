@@ -9,7 +9,7 @@ router.get("/", requireAuth, async (req: Request, res: Response, next: NextFunct
     res.json(list);
 });
 
-router.post("./", async (req: Request, res: Response, next: NextFunction) => {
+router.post("/", async (req: Request, res: Response, next: NextFunction) => {
     try {
         const inventario = await controller.store(req.body)
         res.status(201).json(inventario);

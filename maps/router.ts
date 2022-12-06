@@ -1,27 +1,24 @@
-
-import { Router, Request, Response, NextFunction } from "express";
-import controller from "./controller";
+import { Router, Request, Response, NextFunction } from 'express';
 import { requireAuth } from '../auth/middlewares';
-
+import controller from './controller';
 
 const router = Router();
 
-router.get("/",requireAuth, async (req: Request, res: Response, next: NextFunction) => {
-    const categorias = await controller.list();
-    res.json(categorias);
-})
+router.get("/", requireAuth, async (req: Request, res: Response, next: NextFunction) => {
+    const list = await controller.list();
+    res.json(list);
+});
 
-router.post("/", async (req: Request, res: Response,  next: NextFunction) => {
+router.post("/", async (req: Request, res: Response, next: NextFunction) => {
     try {
-        const Categories = await controller.store(req.body);
-        res.status(201).json(Categories);
-    }
-    catch (error) {
+        const inventario = await controller.store(req.body)
+        res.status(201).json(inventario);
+    } catch (error) {
         res.json({
             message: error
-        })
+        });
     }
-})
+});
 
 router.get("/:id", requireAuth, async (req: Request, res: Response, next: NextFunction) => {
     try {
@@ -57,6 +54,7 @@ router.delete("/:id", requireAuth, async (req: Request, res: Response, next: Nex
         }
     }
 })
+
 router.patch("/id", requireAuth, async (req: Request, res: Response, next: NextFunction) => {
     try {
         const model = await controller.update(req.params.id, req.body);
@@ -73,18 +71,4 @@ router.patch("/id", requireAuth, async (req: Request, res: Response, next: NextF
         });
     }
 })
-
-// router.update ("/:id",requireAuth, async (req: Request, res: Response, next: NextFunction) => {
-//     try {
-//         const { id } = req.params;
-//         const updateCategorie = await controller.update(id, req.body);
-//         res.json(updateCategorie);
-
-//     } catch (error: any) {
-//         res.json({
-//             message: error.message
-//         });
-//      }
-// });
-
 export default router;

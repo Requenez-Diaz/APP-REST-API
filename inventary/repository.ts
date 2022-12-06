@@ -10,7 +10,10 @@ const list = async () => {
 const store = async (data: IInventary) => {
     const id = ulid();
 
-    const models = new Inventary({ id, name: data.name, stok: data.stok, sales: data.sales });
+    const models = new Inventary({
+        nameStore: data.nameStore, service: data.service, description: data.description, horario: data.horario, inventary: data.inventary,
+        sales: data.sales, price: data.price, disponible: data.disponible, id
+    });
     await models.save();
     return models;
 }
@@ -23,7 +26,7 @@ const deleteItem = async (id: string) => {
 }
 
 const update = async (id: string, data: IInventary) => {
-    const model = await Inventary.findOneAndUpdate({ id }, data, {new: true})
+    const model = await Inventary.findOneAndUpdate({ id }, data, { new: true })
     return model;
 }
 
